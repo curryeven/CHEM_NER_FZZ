@@ -1,0 +1,406 @@
+04/18/2026 15:40:23 - INFO - models -   Add tokens: ['<t-0>', '</t-0>', '<t-1>', '</t-1>', '<t-2>', '</t-2>', '<t-3>', '</t-3>', '<t-4>', '</t-4>', '<t-5>', '</t-5>', '<t-6>', '</t-6>', '<t-7>', '</t-7>', '<t-8>', '</t-8>', '<t-9>', '</t-9>', '<t-10>', '</t-10>', '<t-11>', '</t-11>', '<t-12>', '</t-12>', '<t-13>', '</t-13>', '<t-14>', '</t-14>', '<t-15>', '</t-15>', '<t-16>', '</t-16>', '<t-17>', '</t-17>', '<t-18>', '</t-18>', '<t-19>', '</t-19>']
+04/18/2026 15:40:24 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, batch_size=8, bert=False, bipartite=True, context_representation='decoder', dataset_type='ZINC_Ketone', dev_aux='data1/ZINC_Ketone/flickr30k-images_aux_images/dev/crops', dev_file='./data1/ZINC_Ketone/dev.jsonlines', dev_imgspath='data1/ZINC_Ketone/dev.pth', device='cuda', eval_steps=500, gradient_accumulation_steps=1, image='data1/ZINC_Ketone/flickr30k-images', infer_batch_size=32, inference_model_path='./exps/rams_exp_0306_3/42/2e-5/checkpoint', inference_only=False, keep_ratio=1.0, learning_rate=1e-05, logging_steps=100, matching_method_train='max', max_dec_seq_length=300, max_enc_seq_length=260, max_grad_norm=5.0, max_prompt_seq_length=64, max_span_length=10, max_span_num=1, max_steps=10000, model_name_or_path='roberta-large', num_event_embed=0, num_prompt_pos=10, output_dir='output/ZINC_Ketone/text_only13', pad_mask_token=0, prompt_len=10, prompt_path='/root/autodl-tmp/PG/data1/prompts/prompts_ZINC_full_Ketone.csv', role_name_mapping=None, role_path='/root/autodl-tmp/PG/data1/dset_meta/description_ZINC_Ketone.csv', seed=41, single=False, test_aux='data1/ZINC_Ketone/flickr30k-images_aux_images/test/crops', test_file='./data1/ZINC_Ketone/test.jsonlines', test_imgspath='data1/ZINC_Ketone/test.pth', th_delta=0.0, train_aux='data1/ZINC_Ketone/flickr30k-images_aux_images/train/crops', train_file='./data1/ZINC_Ketone/train.jsonlines', train_imgspath='data1/ZINC_Ketone/train.pth', use_prompt=False, warmup_steps=0.1, weight_decay=0.01, window_size=260)
+04/18/2026 15:40:24 - INFO - __main__ -   train dataloader generation
+04/18/2026 15:40:26 - INFO - processors.processor_base -   40726 examples collected. 7 arguments dropped.
+04/18/2026 15:41:52 - INFO - __main__ -   dev dataloader generation
+04/18/2026 15:41:55 - INFO - processors.processor_base -   8729 examples collected. 0 arguments dropped.
+04/18/2026 15:42:11 - INFO - __main__ -   test dataloader generation
+04/18/2026 15:42:11 - INFO - processors.processor_base -   8728 examples collected. 1 arguments dropped.
+04/18/2026 15:42:32 - INFO - runner.runner -   ***** Running training *****
+04/18/2026 15:42:32 - INFO - runner.runner -     Num examples = 40728
+04/18/2026 15:42:32 - INFO - runner.runner -     batch size = 8
+04/18/2026 15:42:32 - INFO - runner.runner -     Gradient Accumulation steps = 1
+04/18/2026 15:42:32 - INFO - runner.runner -     Total optimization steps = 10000
+04/18/2026 15:43:09 - INFO - runner.train -   -----------------------global_step: 100 -------------------------------- 
+04/18/2026 15:43:09 - INFO - runner.train -   lr: 1.5000000000000002e-06
+04/18/2026 15:43:09 - INFO - runner.train -   smooth_loss: 9.89032752990723
+04/18/2026 15:43:46 - INFO - runner.train -   -----------------------global_step: 200 -------------------------------- 
+04/18/2026 15:43:46 - INFO - runner.train -   lr: 3.0000000000000005e-06
+04/18/2026 15:43:46 - INFO - runner.train -   smooth_loss: 3.967466070652008
+04/18/2026 15:44:23 - INFO - runner.train -   -----------------------global_step: 300 -------------------------------- 
+04/18/2026 15:44:23 - INFO - runner.train -   lr: 4.5e-06
+04/18/2026 15:44:23 - INFO - runner.train -   smooth_loss: 2.652411592602731
+04/18/2026 15:45:01 - INFO - runner.train -   -----------------------global_step: 400 -------------------------------- 
+04/18/2026 15:45:01 - INFO - runner.train -   lr: 6.000000000000001e-06
+04/18/2026 15:45:01 - INFO - runner.train -   smooth_loss: 2.091032820343972
+04/18/2026 15:45:38 - INFO - runner.train -   -----------------------global_step: 500 -------------------------------- 
+04/18/2026 15:45:38 - INFO - runner.train -   lr: 7.500000000000001e-06
+04/18/2026 15:45:38 - INFO - runner.train -   smooth_loss: 1.4102629125118256
+04/18/2026 15:48:12 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.5976629625386642 P 0.5976629625386642 F 0.5976629625386642
+04/18/2026 15:48:12 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.5976629625386642 P 0.5976629625386642 F 0.5976629625386642
+04/18/2026 15:50:45 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6140451368999885 P 0.614115490375802 F 0.6140803116228447
+04/18/2026 15:50:45 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6140451368999885 P 0.614115490375802 F 0.6140803116228447
+04/18/2026 15:50:49 - INFO - runner.runner -   current best dev-f1 score: 0.5976629625386642
+04/18/2026 15:50:49 - INFO - runner.runner -   current related test-f1 score: 0.6140803116228447
+04/18/2026 15:51:26 - INFO - runner.train -   -----------------------global_step: 600 -------------------------------- 
+04/18/2026 15:51:26 - INFO - runner.train -   lr: 9e-06
+04/18/2026 15:51:26 - INFO - runner.train -   smooth_loss: 1.2850517989695072
+04/18/2026 15:52:03 - INFO - runner.train -   -----------------------global_step: 700 -------------------------------- 
+04/18/2026 15:52:03 - INFO - runner.train -   lr: 1.0500000000000001e-05
+04/18/2026 15:52:03 - INFO - runner.train -   smooth_loss: 0.979584656469524
+04/18/2026 15:52:41 - INFO - runner.train -   -----------------------global_step: 800 -------------------------------- 
+04/18/2026 15:52:41 - INFO - runner.train -   lr: 1.2000000000000002e-05
+04/18/2026 15:52:41 - INFO - runner.train -   smooth_loss: 0.6771093890257177
+04/18/2026 15:53:19 - INFO - runner.train -   -----------------------global_step: 900 -------------------------------- 
+04/18/2026 15:53:19 - INFO - runner.train -   lr: 1.3500000000000003e-05
+04/18/2026 15:53:19 - INFO - runner.train -   smooth_loss: 0.6870411617378703
+04/18/2026 15:53:56 - INFO - runner.train -   -----------------------global_step: 1000 -------------------------------- 
+04/18/2026 15:53:56 - INFO - runner.train -   lr: 1.5000000000000002e-05
+04/18/2026 15:53:56 - INFO - runner.train -   smooth_loss: 0.6733326790388672
+04/18/2026 15:56:29 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6351242983159583 P 0.6397415185783522 F 0.6374245472837021
+04/18/2026 15:56:29 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6351242983159583 P 0.6397415185783522 F 0.6374245472837021
+04/18/2026 15:59:05 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6485278955206782 P 0.6523392486748099 F 0.6504279887401619
+04/18/2026 15:59:05 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6485278955206782 P 0.6523392486748099 F 0.6504279887401619
+04/18/2026 15:59:10 - INFO - runner.runner -   current best dev-f1 score: 0.6374245472837021
+04/18/2026 15:59:10 - INFO - runner.runner -   current related test-f1 score: 0.6504279887401619
+04/18/2026 15:59:47 - INFO - runner.train -   -----------------------global_step: 1100 -------------------------------- 
+04/18/2026 15:59:47 - INFO - runner.train -   lr: 1.4833333333333336e-05
+04/18/2026 15:59:47 - INFO - runner.train -   smooth_loss: 0.6246782511647326
+04/18/2026 16:00:24 - INFO - runner.train -   -----------------------global_step: 1200 -------------------------------- 
+04/18/2026 16:00:24 - INFO - runner.train -   lr: 1.4666666666666668e-05
+04/18/2026 16:00:24 - INFO - runner.train -   smooth_loss: 0.5883767253317637
+04/18/2026 16:01:02 - INFO - runner.train -   -----------------------global_step: 1300 -------------------------------- 
+04/18/2026 16:01:02 - INFO - runner.train -   lr: 1.4500000000000002e-05
+04/18/2026 16:01:02 - INFO - runner.train -   smooth_loss: 0.44094886313218923
+04/18/2026 16:01:40 - INFO - runner.train -   -----------------------global_step: 1400 -------------------------------- 
+04/18/2026 16:01:40 - INFO - runner.train -   lr: 1.4333333333333336e-05
+04/18/2026 16:01:40 - INFO - runner.train -   smooth_loss: 0.46709498946380346
+04/18/2026 16:02:17 - INFO - runner.train -   -----------------------global_step: 1500 -------------------------------- 
+04/18/2026 16:02:17 - INFO - runner.train -   lr: 1.4166666666666668e-05
+04/18/2026 16:02:17 - INFO - runner.train -   smooth_loss: 0.427620179794176
+04/18/2026 16:04:52 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6442891511055103 P 0.6451020876347786 F 0.6446953630996732
+04/18/2026 16:04:52 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6442891511055103 P 0.6451020876347786 F 0.6446953630996732
+04/18/2026 16:07:25 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6587237942490549 P 0.6594036697247706 F 0.6590635566508108
+04/18/2026 16:07:25 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6587237942490549 P 0.6594036697247706 F 0.6590635566508108
+04/18/2026 16:07:30 - INFO - runner.runner -   current best dev-f1 score: 0.6446953630996732
+04/18/2026 16:07:30 - INFO - runner.runner -   current related test-f1 score: 0.6590635566508108
+04/18/2026 16:08:07 - INFO - runner.train -   -----------------------global_step: 1600 -------------------------------- 
+04/18/2026 16:08:07 - INFO - runner.train -   lr: 1.4000000000000001e-05
+04/18/2026 16:08:07 - INFO - runner.train -   smooth_loss: 0.43758254420971765
+04/18/2026 16:08:45 - INFO - runner.train -   -----------------------global_step: 1700 -------------------------------- 
+04/18/2026 16:08:45 - INFO - runner.train -   lr: 1.3833333333333335e-05
+04/18/2026 16:08:45 - INFO - runner.train -   smooth_loss: 0.41900035865168334
+04/18/2026 16:09:22 - INFO - runner.train -   -----------------------global_step: 1800 -------------------------------- 
+04/18/2026 16:09:22 - INFO - runner.train -   lr: 1.3666666666666669e-05
+04/18/2026 16:09:22 - INFO - runner.train -   smooth_loss: 0.23879517827359442
+04/18/2026 16:09:59 - INFO - runner.train -   -----------------------global_step: 1900 -------------------------------- 
+04/18/2026 16:09:59 - INFO - runner.train -   lr: 1.3500000000000003e-05
+04/18/2026 16:09:59 - INFO - runner.train -   smooth_loss: 0.3112093983472732
+04/18/2026 16:10:37 - INFO - runner.train -   -----------------------global_step: 2000 -------------------------------- 
+04/18/2026 16:10:37 - INFO - runner.train -   lr: 1.3333333333333335e-05
+04/18/2026 16:10:37 - INFO - runner.train -   smooth_loss: 0.27235174045275695
+04/18/2026 16:13:12 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6505899873983274 P 0.6505899873983274 F 0.6505899873983274
+04/18/2026 16:13:12 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6505899873983274 P 0.6505899873983274 F 0.6505899873983274
+04/18/2026 16:15:45 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6661702371405659 P 0.6662465627864345 F 0.6662083977773958
+04/18/2026 16:15:45 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6661702371405659 P 0.6662465627864345 F 0.6662083977773958
+04/18/2026 16:15:50 - INFO - runner.runner -   current best dev-f1 score: 0.6505899873983274
+04/18/2026 16:15:50 - INFO - runner.runner -   current related test-f1 score: 0.6662083977773958
+04/18/2026 16:16:27 - INFO - runner.train -   -----------------------global_step: 2100 -------------------------------- 
+04/18/2026 16:16:27 - INFO - runner.train -   lr: 1.3166666666666669e-05
+04/18/2026 16:16:27 - INFO - runner.train -   smooth_loss: 0.2671434577941182
+04/18/2026 16:17:05 - INFO - runner.train -   -----------------------global_step: 2200 -------------------------------- 
+04/18/2026 16:17:05 - INFO - runner.train -   lr: 1.3000000000000003e-05
+04/18/2026 16:17:05 - INFO - runner.train -   smooth_loss: 0.19331880816806915
+04/18/2026 16:17:43 - INFO - runner.train -   -----------------------global_step: 2300 -------------------------------- 
+04/18/2026 16:17:43 - INFO - runner.train -   lr: 1.2833333333333335e-05
+04/18/2026 16:17:43 - INFO - runner.train -   smooth_loss: 0.227206636968624
+04/18/2026 16:18:20 - INFO - runner.train -   -----------------------global_step: 2400 -------------------------------- 
+04/18/2026 16:18:20 - INFO - runner.train -   lr: 1.2666666666666668e-05
+04/18/2026 16:18:20 - INFO - runner.train -   smooth_loss: 0.18503809843387664
+04/18/2026 16:18:58 - INFO - runner.train -   -----------------------global_step: 2500 -------------------------------- 
+04/18/2026 16:18:58 - INFO - runner.train -   lr: 1.2500000000000002e-05
+04/18/2026 16:18:58 - INFO - runner.train -   smooth_loss: 0.1680954023820511
+04/18/2026 16:21:33 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6537976858746707 P 0.6830640335128666 F 0.6681105127604776
+04/18/2026 16:21:33 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6537976858746707 P 0.6830640335128666 F 0.6681105127604776
+04/18/2026 16:24:02 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6682323290182152 P 0.6974769819442783 F 0.6825415399017085
+04/18/2026 16:24:02 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6682323290182152 P 0.6974769819442783 F 0.6825415399017085
+04/18/2026 16:24:08 - INFO - runner.runner -   current best dev-f1 score: 0.6681105127604776
+04/18/2026 16:24:08 - INFO - runner.runner -   current related test-f1 score: 0.6825415399017085
+04/18/2026 16:24:45 - INFO - runner.train -   -----------------------global_step: 2600 -------------------------------- 
+04/18/2026 16:24:45 - INFO - runner.train -   lr: 1.2333333333333334e-05
+04/18/2026 16:24:45 - INFO - runner.train -   smooth_loss: 0.2558430252287236
+04/18/2026 16:25:21 - INFO - runner.train -   -----------------------global_step: 2700 -------------------------------- 
+04/18/2026 16:25:21 - INFO - runner.train -   lr: 1.2166666666666668e-05
+04/18/2026 16:25:21 - INFO - runner.train -   smooth_loss: 0.16817196547478833
+04/18/2026 16:25:58 - INFO - runner.train -   -----------------------global_step: 2800 -------------------------------- 
+04/18/2026 16:25:58 - INFO - runner.train -   lr: 1.2000000000000002e-05
+04/18/2026 16:25:58 - INFO - runner.train -   smooth_loss: 0.14692653467987837
+04/18/2026 16:26:35 - INFO - runner.train -   -----------------------global_step: 2900 -------------------------------- 
+04/18/2026 16:26:35 - INFO - runner.train -   lr: 1.1833333333333334e-05
+04/18/2026 16:26:35 - INFO - runner.train -   smooth_loss: 0.09745972077354735
+04/18/2026 16:27:12 - INFO - runner.train -   -----------------------global_step: 3000 -------------------------------- 
+04/18/2026 16:27:12 - INFO - runner.train -   lr: 1.1666666666666668e-05
+04/18/2026 16:27:12 - INFO - runner.train -   smooth_loss: 0.1858034470669373
+04/18/2026 16:29:40 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6581509909497079 P 0.7045621780721119 F 0.680566250074039
+04/18/2026 16:29:40 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6581509909497079 P 0.7045621780721119 F 0.680566250074039
+04/18/2026 16:32:12 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6716691488142972 P 0.7202702702702702 F 0.6951212282885767
+04/18/2026 16:32:12 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6716691488142972 P 0.7202702702702702 F 0.6951212282885767
+04/18/2026 16:32:17 - INFO - runner.runner -   current best dev-f1 score: 0.680566250074039
+04/18/2026 16:32:17 - INFO - runner.runner -   current related test-f1 score: 0.6951212282885767
+04/18/2026 16:32:54 - INFO - runner.train -   -----------------------global_step: 3100 -------------------------------- 
+04/18/2026 16:32:54 - INFO - runner.train -   lr: 1.1500000000000002e-05
+04/18/2026 16:32:54 - INFO - runner.train -   smooth_loss: 0.11319599613679854
+04/18/2026 16:33:31 - INFO - runner.train -   -----------------------global_step: 3200 -------------------------------- 
+04/18/2026 16:33:31 - INFO - runner.train -   lr: 1.1333333333333334e-05
+04/18/2026 16:33:31 - INFO - runner.train -   smooth_loss: 0.1397050508672231
+04/18/2026 16:34:08 - INFO - runner.train -   -----------------------global_step: 3300 -------------------------------- 
+04/18/2026 16:34:08 - INFO - runner.train -   lr: 1.116666666666667e-05
+04/18/2026 16:34:08 - INFO - runner.train -   smooth_loss: 0.15723749212020283
+04/18/2026 16:34:45 - INFO - runner.train -   -----------------------global_step: 3400 -------------------------------- 
+04/18/2026 16:34:45 - INFO - runner.train -   lr: 1.1000000000000001e-05
+04/18/2026 16:34:45 - INFO - runner.train -   smooth_loss: 0.07527697081223626
+04/18/2026 16:35:22 - INFO - runner.train -   -----------------------global_step: 3500 -------------------------------- 
+04/18/2026 16:35:22 - INFO - runner.train -   lr: 1.0833333333333335e-05
+04/18/2026 16:35:22 - INFO - runner.train -   smooth_loss: 0.1637877979041811
+04/18/2026 16:37:55 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6604422041470959 P 0.7002307785740314 F 0.6797547459026059
+04/18/2026 16:37:55 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6604422041470959 P 0.7002307785740314 F 0.6797547459026059
+04/18/2026 16:40:28 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.672471073433383 P 0.7148946535135794 F 0.693034238488784
+04/18/2026 16:40:28 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.672471073433383 P 0.7148946535135794 F 0.693034238488784
+04/18/2026 16:40:28 - INFO - runner.runner -   current best dev-f1 score: 0.680566250074039
+04/18/2026 16:40:28 - INFO - runner.runner -   current related test-f1 score: 0.6951212282885767
+04/18/2026 16:41:05 - INFO - runner.train -   -----------------------global_step: 3600 -------------------------------- 
+04/18/2026 16:41:05 - INFO - runner.train -   lr: 1.0666666666666669e-05
+04/18/2026 16:41:05 - INFO - runner.train -   smooth_loss: 0.15461761232364554
+04/18/2026 16:41:41 - INFO - runner.train -   -----------------------global_step: 3700 -------------------------------- 
+04/18/2026 16:41:41 - INFO - runner.train -   lr: 1.0500000000000001e-05
+04/18/2026 16:41:41 - INFO - runner.train -   smooth_loss: 0.13818775822194088
+04/18/2026 16:42:18 - INFO - runner.train -   -----------------------global_step: 3800 -------------------------------- 
+04/18/2026 16:42:18 - INFO - runner.train -   lr: 1.0333333333333335e-05
+04/18/2026 16:42:18 - INFO - runner.train -   smooth_loss: 0.11447426324798926
+04/18/2026 16:42:55 - INFO - runner.train -   -----------------------global_step: 3900 -------------------------------- 
+04/18/2026 16:42:55 - INFO - runner.train -   lr: 1.0166666666666669e-05
+04/18/2026 16:42:55 - INFO - runner.train -   smooth_loss: 0.13851883886475203
+04/18/2026 16:43:32 - INFO - runner.train -   -----------------------global_step: 4000 -------------------------------- 
+04/18/2026 16:43:32 - INFO - runner.train -   lr: 1e-05
+04/18/2026 16:43:32 - INFO - runner.train -   smooth_loss: 0.12240204737698152
+04/18/2026 16:46:03 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6602130828273571 P 0.7249968549503082 F 0.6910900587600431
+04/18/2026 16:46:03 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6602130828273571 P 0.7249968549503082 F 0.6910900587600431
+04/18/2026 16:48:36 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6735021193722076 P 0.737918915526547 F 0.7042405366554864
+04/18/2026 16:48:36 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6735021193722076 P 0.737918915526547 F 0.7042405366554864
+04/18/2026 16:48:41 - INFO - runner.runner -   current best dev-f1 score: 0.6910900587600431
+04/18/2026 16:48:41 - INFO - runner.runner -   current related test-f1 score: 0.7042405366554864
+04/18/2026 16:49:18 - INFO - runner.train -   -----------------------global_step: 4100 -------------------------------- 
+04/18/2026 16:49:18 - INFO - runner.train -   lr: 9.833333333333335e-06
+04/18/2026 16:49:18 - INFO - runner.train -   smooth_loss: 0.09223799031381079
+04/18/2026 16:49:55 - INFO - runner.train -   -----------------------global_step: 4200 -------------------------------- 
+04/18/2026 16:49:55 - INFO - runner.train -   lr: 9.666666666666668e-06
+04/18/2026 16:49:55 - INFO - runner.train -   smooth_loss: 0.11845431881542308
+04/18/2026 16:50:32 - INFO - runner.train -   -----------------------global_step: 4300 -------------------------------- 
+04/18/2026 16:50:32 - INFO - runner.train -   lr: 9.5e-06
+04/18/2026 16:50:32 - INFO - runner.train -   smooth_loss: 0.11341380811078011
+04/18/2026 16:51:10 - INFO - runner.train -   -----------------------global_step: 4400 -------------------------------- 
+04/18/2026 16:51:10 - INFO - runner.train -   lr: 9.333333333333334e-06
+04/18/2026 16:51:10 - INFO - runner.train -   smooth_loss: 0.12645516157241218
+04/18/2026 16:51:47 - INFO - runner.train -   -----------------------global_step: 4500 -------------------------------- 
+04/18/2026 16:51:47 - INFO - runner.train -   lr: 9.166666666666668e-06
+04/18/2026 16:51:47 - INFO - runner.train -   smooth_loss: 0.06963089409897237
+04/18/2026 16:54:23 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6607858861267041 P 0.7173237159557269 F 0.6878950506857484
+04/18/2026 16:54:23 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6607858861267041 P 0.7173237159557269 F 0.6878950506857484
+04/18/2026 16:56:58 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.672471073433383 P 0.7300995024875622 F 0.7001013775418928
+04/18/2026 16:56:58 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.672471073433383 P 0.7300995024875622 F 0.7001013775418928
+04/18/2026 16:56:58 - INFO - runner.runner -   current best dev-f1 score: 0.6910900587600431
+04/18/2026 16:56:58 - INFO - runner.runner -   current related test-f1 score: 0.7042405366554864
+04/18/2026 16:57:36 - INFO - runner.train -   -----------------------global_step: 4600 -------------------------------- 
+04/18/2026 16:57:36 - INFO - runner.train -   lr: 9e-06
+04/18/2026 16:57:36 - INFO - runner.train -   smooth_loss: 0.055416873963542924
+04/18/2026 16:58:13 - INFO - runner.train -   -----------------------global_step: 4700 -------------------------------- 
+04/18/2026 16:58:13 - INFO - runner.train -   lr: 8.833333333333334e-06
+04/18/2026 16:58:13 - INFO - runner.train -   smooth_loss: 0.0936888907392631
+04/18/2026 16:58:51 - INFO - runner.train -   -----------------------global_step: 4800 -------------------------------- 
+04/18/2026 16:58:51 - INFO - runner.train -   lr: 8.666666666666668e-06
+04/18/2026 16:58:51 - INFO - runner.train -   smooth_loss: 0.07147409866637418
+04/18/2026 16:59:29 - INFO - runner.train -   -----------------------global_step: 4900 -------------------------------- 
+04/18/2026 16:59:29 - INFO - runner.train -   lr: 8.500000000000002e-06
+04/18/2026 16:59:29 - INFO - runner.train -   smooth_loss: 0.057037001444186886
+04/18/2026 17:00:06 - INFO - runner.train -   -----------------------global_step: 5000 -------------------------------- 
+04/18/2026 17:00:06 - INFO - runner.train -   lr: 8.333333333333335e-06
+04/18/2026 17:00:06 - INFO - runner.train -   smooth_loss: 0.1226065907530847
+04/18/2026 17:02:42 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6617023714056594 P 0.6971635485817743 F 0.6789702597860586
+04/18/2026 17:02:42 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6617023714056594 P 0.6971635485817743 F 0.6789702597860586
+04/18/2026 17:05:19 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6733875587123381 P 0.7090470446320869 F 0.6907573888007521
+04/18/2026 17:05:19 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6733875587123381 P 0.7090470446320869 F 0.6907573888007521
+04/18/2026 17:05:19 - INFO - runner.runner -   current best dev-f1 score: 0.6910900587600431
+04/18/2026 17:05:19 - INFO - runner.runner -   current related test-f1 score: 0.7042405366554864
+04/18/2026 17:05:57 - INFO - runner.train -   -----------------------global_step: 5100 -------------------------------- 
+04/18/2026 17:05:57 - INFO - runner.train -   lr: 8.166666666666668e-06
+04/18/2026 17:05:57 - INFO - runner.train -   smooth_loss: 0.08423693412115879
+04/18/2026 17:06:34 - INFO - runner.train -   -----------------------global_step: 5200 -------------------------------- 
+04/18/2026 17:06:34 - INFO - runner.train -   lr: 8.000000000000001e-06
+04/18/2026 17:06:34 - INFO - runner.train -   smooth_loss: 0.06708692434077876
+04/18/2026 17:07:12 - INFO - runner.train -   -----------------------global_step: 5300 -------------------------------- 
+04/18/2026 17:07:12 - INFO - runner.train -   lr: 7.833333333333335e-06
+04/18/2026 17:07:12 - INFO - runner.train -   smooth_loss: 0.07049778653627302
+04/18/2026 17:07:49 - INFO - runner.train -   -----------------------global_step: 5400 -------------------------------- 
+04/18/2026 17:07:49 - INFO - runner.train -   lr: 7.666666666666667e-06
+04/18/2026 17:07:49 - INFO - runner.train -   smooth_loss: 0.04819172081891792
+04/18/2026 17:08:27 - INFO - runner.train -   -----------------------global_step: 5500 -------------------------------- 
+04/18/2026 17:08:27 - INFO - runner.train -   lr: 7.500000000000001e-06
+04/18/2026 17:08:27 - INFO - runner.train -   smooth_loss: 0.08447237364352535
+04/18/2026 17:11:01 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6610150074464429 P 0.8218202535251389 F 0.7326984126984127
+04/18/2026 17:11:01 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6610150074464429 P 0.8218202535251389 F 0.7326984126984127
+04/18/2026 17:13:34 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6723565127735136 P 0.8314208811446381 F 0.7434760577653914
+04/18/2026 17:13:34 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6723565127735136 P 0.8314208811446381 F 0.7434760577653914
+04/18/2026 17:13:39 - INFO - runner.runner -   current best dev-f1 score: 0.7326984126984127
+04/18/2026 17:13:39 - INFO - runner.runner -   current related test-f1 score: 0.7434760577653914
+04/18/2026 17:14:17 - INFO - runner.train -   -----------------------global_step: 5600 -------------------------------- 
+04/18/2026 17:14:17 - INFO - runner.train -   lr: 7.333333333333334e-06
+04/18/2026 17:14:17 - INFO - runner.train -   smooth_loss: 0.06720112921176567
+04/18/2026 17:14:54 - INFO - runner.train -   -----------------------global_step: 5700 -------------------------------- 
+04/18/2026 17:14:54 - INFO - runner.train -   lr: 7.166666666666668e-06
+04/18/2026 17:14:54 - INFO - runner.train -   smooth_loss: 0.2091780490009478
+04/18/2026 17:15:31 - INFO - runner.train -   -----------------------global_step: 5800 -------------------------------- 
+04/18/2026 17:15:31 - INFO - runner.train -   lr: 7.000000000000001e-06
+04/18/2026 17:15:31 - INFO - runner.train -   smooth_loss: 0.10979452262785343
+04/18/2026 17:16:09 - INFO - runner.train -   -----------------------global_step: 5900 -------------------------------- 
+04/18/2026 17:16:09 - INFO - runner.train -   lr: 6.8333333333333345e-06
+04/18/2026 17:16:09 - INFO - runner.train -   smooth_loss: 0.164454211069139
+04/18/2026 17:16:46 - INFO - runner.train -   -----------------------global_step: 6000 -------------------------------- 
+04/18/2026 17:16:46 - INFO - runner.train -   lr: 6.6666666666666675e-06
+04/18/2026 17:16:46 - INFO - runner.train -   smooth_loss: 0.0852486508938628
+04/18/2026 17:19:19 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6615878107457899 P 0.9068781407035176 F 0.7650526594687687
+04/18/2026 17:19:19 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6615878107457899 P 0.9068781407035176 F 0.7650526594687687
+04/18/2026 17:21:50 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6739603620116852 P 0.9170693686671862 F 0.7769413629160064
+04/18/2026 17:21:50 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6739603620116852 P 0.9170693686671862 F 0.7769413629160064
+04/18/2026 17:21:56 - INFO - runner.runner -   current best dev-f1 score: 0.7650526594687687
+04/18/2026 17:21:56 - INFO - runner.runner -   current related test-f1 score: 0.7769413629160064
+04/18/2026 17:22:33 - INFO - runner.train -   -----------------------global_step: 6100 -------------------------------- 
+04/18/2026 17:22:33 - INFO - runner.train -   lr: 6.500000000000001e-06
+04/18/2026 17:22:33 - INFO - runner.train -   smooth_loss: 0.038851461479725916
+04/18/2026 17:23:10 - INFO - runner.train -   -----------------------global_step: 6200 -------------------------------- 
+04/18/2026 17:23:10 - INFO - runner.train -   lr: 6.333333333333334e-06
+04/18/2026 17:23:10 - INFO - runner.train -   smooth_loss: 0.11667531760171879
+04/18/2026 17:23:48 - INFO - runner.train -   -----------------------global_step: 6300 -------------------------------- 
+04/18/2026 17:23:48 - INFO - runner.train -   lr: 6.166666666666667e-06
+04/18/2026 17:23:48 - INFO - runner.train -   smooth_loss: 0.05715470984315288
+04/18/2026 17:24:25 - INFO - runner.train -   -----------------------global_step: 6400 -------------------------------- 
+04/18/2026 17:24:25 - INFO - runner.train -   lr: 6.000000000000001e-06
+04/18/2026 17:24:25 - INFO - runner.train -   smooth_loss: 0.06552734135330411
+04/18/2026 17:25:03 - INFO - runner.train -   -----------------------global_step: 6500 -------------------------------- 
+04/18/2026 17:25:03 - INFO - runner.train -   lr: 5.833333333333334e-06
+04/18/2026 17:25:03 - INFO - runner.train -   smooth_loss: 0.04364056487659355
+04/18/2026 17:27:35 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6620460533852675 P 0.8466158804570759 F 0.7430408228865316
+04/18/2026 17:27:35 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6620460533852675 P 0.8466158804570759 F 0.7430408228865316
+04/18/2026 17:30:07 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6748768472906403 P 0.8569973814373 F 0.7551111965647632
+04/18/2026 17:30:07 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6748768472906403 P 0.8569973814373 F 0.7551111965647632
+04/18/2026 17:30:07 - INFO - runner.runner -   current best dev-f1 score: 0.7650526594687687
+04/18/2026 17:30:07 - INFO - runner.runner -   current related test-f1 score: 0.7769413629160064
+04/18/2026 17:30:44 - INFO - runner.train -   -----------------------global_step: 6600 -------------------------------- 
+04/18/2026 17:30:44 - INFO - runner.train -   lr: 5.666666666666667e-06
+04/18/2026 17:30:44 - INFO - runner.train -   smooth_loss: 0.014822334471205066
+04/18/2026 17:31:21 - INFO - runner.train -   -----------------------global_step: 6700 -------------------------------- 
+04/18/2026 17:31:21 - INFO - runner.train -   lr: 5.500000000000001e-06
+04/18/2026 17:31:21 - INFO - runner.train -   smooth_loss: 0.04877950865053204
+04/18/2026 17:31:58 - INFO - runner.train -   -----------------------global_step: 6800 -------------------------------- 
+04/18/2026 17:31:58 - INFO - runner.train -   lr: 5.3333333333333345e-06
+04/18/2026 17:31:58 - INFO - runner.train -   smooth_loss: 0.06541035911148811
+04/18/2026 17:32:35 - INFO - runner.train -   -----------------------global_step: 6900 -------------------------------- 
+04/18/2026 17:32:35 - INFO - runner.train -   lr: 5.1666666666666675e-06
+04/18/2026 17:32:35 - INFO - runner.train -   smooth_loss: 0.09378076590038628
+04/18/2026 17:33:13 - INFO - runner.train -   -----------------------global_step: 7000 -------------------------------- 
+04/18/2026 17:33:13 - INFO - runner.train -   lr: 5e-06
+04/18/2026 17:33:13 - INFO - runner.train -   smooth_loss: 0.08107005066386136
+04/18/2026 17:35:45 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6627334173444839 P 0.7983715153187966 F 0.7242566510172144
+04/18/2026 17:35:45 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6627334173444839 P 0.7983715153187966 F 0.7242566510172144
+04/18/2026 17:38:19 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6738458013518158 P 0.8055327307586962 F 0.7338282078472959
+04/18/2026 17:38:19 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6738458013518158 P 0.8055327307586962 F 0.7338282078472959
+04/18/2026 17:38:19 - INFO - runner.runner -   current best dev-f1 score: 0.7650526594687687
+04/18/2026 17:38:19 - INFO - runner.runner -   current related test-f1 score: 0.7769413629160064
+04/18/2026 17:38:56 - INFO - runner.train -   -----------------------global_step: 7100 -------------------------------- 
+04/18/2026 17:38:56 - INFO - runner.train -   lr: 4.833333333333334e-06
+04/18/2026 17:38:56 - INFO - runner.train -   smooth_loss: 0.0115696931792445
+04/18/2026 17:39:33 - INFO - runner.train -   -----------------------global_step: 7200 -------------------------------- 
+04/18/2026 17:39:33 - INFO - runner.train -   lr: 4.666666666666667e-06
+04/18/2026 17:39:33 - INFO - runner.train -   smooth_loss: 0.06416530978277023
+04/18/2026 17:40:10 - INFO - runner.train -   -----------------------global_step: 7300 -------------------------------- 
+04/18/2026 17:40:10 - INFO - runner.train -   lr: 4.5e-06
+04/18/2026 17:40:10 - INFO - runner.train -   smooth_loss: 0.053950746520029874
+04/18/2026 17:40:48 - INFO - runner.train -   -----------------------global_step: 7400 -------------------------------- 
+04/18/2026 17:40:48 - INFO - runner.train -   lr: 4.333333333333334e-06
+04/18/2026 17:40:48 - INFO - runner.train -   smooth_loss: 0.05570841792956571
+04/18/2026 17:41:25 - INFO - runner.train -   -----------------------global_step: 7500 -------------------------------- 
+04/18/2026 17:41:25 - INFO - runner.train -   lr: 4.166666666666668e-06
+04/18/2026 17:41:25 - INFO - runner.train -   smooth_loss: 0.042305093092398625
+04/18/2026 17:43:56 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6626188566846145 P 0.7542052418829052 F 0.7054518843761435
+04/18/2026 17:43:56 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6626188566846145 P 0.7542052418829052 F 0.7054518843761435
+04/18/2026 17:46:29 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6744186046511628 P 0.7666362807657247 F 0.7175767918088737
+04/18/2026 17:46:29 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6744186046511628 P 0.7666362807657247 F 0.7175767918088737
+04/18/2026 17:46:29 - INFO - runner.runner -   current best dev-f1 score: 0.7650526594687687
+04/18/2026 17:46:29 - INFO - runner.runner -   current related test-f1 score: 0.7769413629160064
+04/18/2026 17:47:06 - INFO - runner.train -   -----------------------global_step: 7600 -------------------------------- 
+04/18/2026 17:47:06 - INFO - runner.train -   lr: 4.000000000000001e-06
+04/18/2026 17:47:06 - INFO - runner.train -   smooth_loss: 0.04631179713774146
+04/18/2026 17:47:44 - INFO - runner.train -   -----------------------global_step: 7700 -------------------------------- 
+04/18/2026 17:47:44 - INFO - runner.train -   lr: 3.833333333333334e-06
+04/18/2026 17:47:44 - INFO - runner.train -   smooth_loss: 0.010094014547927374
+04/18/2026 17:48:21 - INFO - runner.train -   -----------------------global_step: 7800 -------------------------------- 
+04/18/2026 17:48:21 - INFO - runner.train -   lr: 3.666666666666667e-06
+04/18/2026 17:48:21 - INFO - runner.train -   smooth_loss: 0.08615627221956285
+04/18/2026 17:48:59 - INFO - runner.train -   -----------------------global_step: 7900 -------------------------------- 
+04/18/2026 17:48:59 - INFO - runner.train -   lr: 3.5000000000000004e-06
+04/18/2026 17:48:59 - INFO - runner.train -   smooth_loss: 0.06360914774890034
+04/18/2026 17:49:36 - INFO - runner.train -   -----------------------global_step: 8000 -------------------------------- 
+04/18/2026 17:49:36 - INFO - runner.train -   lr: 3.3333333333333337e-06
+04/18/2026 17:49:36 - INFO - runner.train -   smooth_loss: 0.05477476674102718
+04/18/2026 17:52:10 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6630770993240921 P 0.7942912035131056 F 0.7227772227772228
+04/18/2026 17:52:10 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6630770993240921 P 0.7942912035131056 F 0.7227772227772228
+04/18/2026 17:54:42 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.674762286630771 P 0.8008157715839564 F 0.7324048744093509
+04/18/2026 17:54:42 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.674762286630771 P 0.8008157715839564 F 0.7324048744093509
+04/18/2026 17:54:42 - INFO - runner.runner -   current best dev-f1 score: 0.7650526594687687
+04/18/2026 17:54:42 - INFO - runner.runner -   current related test-f1 score: 0.7769413629160064
+04/18/2026 17:55:19 - INFO - runner.train -   -----------------------global_step: 8100 -------------------------------- 
+04/18/2026 17:55:19 - INFO - runner.train -   lr: 3.166666666666667e-06
+04/18/2026 17:55:19 - INFO - runner.train -   smooth_loss: 0.018162805880116935
+04/18/2026 17:55:56 - INFO - runner.train -   -----------------------global_step: 8200 -------------------------------- 
+04/18/2026 17:55:56 - INFO - runner.train -   lr: 3.0000000000000005e-06
+04/18/2026 17:55:56 - INFO - runner.train -   smooth_loss: 0.1000692087862734
+04/18/2026 17:56:34 - INFO - runner.train -   -----------------------global_step: 8300 -------------------------------- 
+04/18/2026 17:56:34 - INFO - runner.train -   lr: 2.8333333333333335e-06
+04/18/2026 17:56:34 - INFO - runner.train -   smooth_loss: 0.053821795024241524
+04/18/2026 17:57:11 - INFO - runner.train -   -----------------------global_step: 8400 -------------------------------- 
+04/18/2026 17:57:11 - INFO - runner.train -   lr: 2.6666666666666673e-06
+04/18/2026 17:57:11 - INFO - runner.train -   smooth_loss: 0.02013805315645188
+04/18/2026 17:57:48 - INFO - runner.train -   -----------------------global_step: 8500 -------------------------------- 
+04/18/2026 17:57:48 - INFO - runner.train -   lr: 2.5e-06
+04/18/2026 17:57:48 - INFO - runner.train -   smooth_loss: 0.053870185967377866
+04/18/2026 18:00:21 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6633062206438309 P 0.7754118119726798 F 0.7149913558903432
+04/18/2026 18:00:21 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6633062206438309 P 0.7754118119726798 F 0.7149913558903432
+04/18/2026 18:02:52 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6752205292702486 P 0.7859714628617149 F 0.7263988168597485
+04/18/2026 18:02:52 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6752205292702486 P 0.7859714628617149 F 0.7263988168597485
+04/18/2026 18:02:52 - INFO - runner.runner -   current best dev-f1 score: 0.7650526594687687
+04/18/2026 18:02:52 - INFO - runner.runner -   current related test-f1 score: 0.7769413629160064
+04/18/2026 18:03:29 - INFO - runner.train -   -----------------------global_step: 8600 -------------------------------- 
+04/18/2026 18:03:29 - INFO - runner.train -   lr: 2.3333333333333336e-06
+04/18/2026 18:03:29 - INFO - runner.train -   smooth_loss: 0.09050176547002364
+04/18/2026 18:04:07 - INFO - runner.train -   -----------------------global_step: 8700 -------------------------------- 
+04/18/2026 18:04:07 - INFO - runner.train -   lr: 2.166666666666667e-06
+04/18/2026 18:04:07 - INFO - runner.train -   smooth_loss: 0.02137982968045662
+04/18/2026 18:04:44 - INFO - runner.train -   -----------------------global_step: 8800 -------------------------------- 
+04/18/2026 18:04:44 - INFO - runner.train -   lr: 2.0000000000000003e-06
+04/18/2026 18:04:44 - INFO - runner.train -   smooth_loss: 0.07663736978163684
+04/18/2026 18:05:22 - INFO - runner.train -   -----------------------global_step: 8900 -------------------------------- 
+04/18/2026 18:05:22 - INFO - runner.train -   lr: 1.8333333333333335e-06
+04/18/2026 18:05:22 - INFO - runner.train -   smooth_loss: 0.004925659050363721
+04/18/2026 18:05:59 - INFO - runner.train -   -----------------------global_step: 9000 -------------------------------- 
+04/18/2026 18:05:59 - INFO - runner.train -   lr: 1.6666666666666669e-06
+04/18/2026 18:05:59 - INFO - runner.train -   smooth_loss: 0.027487409168991804
+04/18/2026 18:08:34 - INFO - runner.evaluate -   span-Classification. DEV (8729): R 0.6633062206438309 P 0.7385204081632653 F 0.6988955277928661
+04/18/2026 18:08:34 - INFO - runner.evaluate -   span-Identification. DEV (8729): R 0.6633062206438309 P 0.7385204081632653 F 0.6988955277928661
+04/18/2026 18:11:07 - INFO - runner.evaluate -   span-Classification. TEST (8729): R 0.6751059686103792 P 0.7512748597654259 F 0.7111567006576962
+04/18/2026 18:11:07 - INFO - runner.evaluate -   span-Identification. TEST (8729): R 0.6751059686103792 P 0.7512748597654259 F 0.7111567006576962
+04/18/2026 18:11:07 - INFO - runner.runner -   current best dev-f1 score: 0.7650526594687687
+04/18/2026 18:11:07 - INFO - runner.runner -   current related test-f1 score: 0.7769413629160064
+04/18/2026 18:11:44 - INFO - runner.train -   -----------------------global_step: 9100 -------------------------------- 
+04/18/2026 18:11:44 - INFO - runner.train -   lr: 1.5000000000000002e-06
+04/18/2026 18:11:44 - INFO - runner.train -   smooth_loss: 0.018328008059805834
+04/18/2026 18:12:21 - INFO - runner.train -   -----------------------global_step: 9200 -------------------------------- 
+04/18/2026 18:12:21 - INFO - runner.train -   lr: 1.3333333333333336e-06
+04/18/2026 18:12:21 - INFO - runner.train -   smooth_loss: 0.027382112962011436
+04/18/2026 18:12:59 - INFO - runner.train -   -----------------------global_step: 9300 -------------------------------- 
+04/18/2026 18:12:59 - INFO - runner.train -   lr: 1.1666666666666668e-06
+04/18/2026 18:12:59 - INFO - runner.train -   smooth_loss: 0.05898209697091602
+04/18/2026 18:13:36 - INFO - runner.train -   -----------------------global_step: 9400 -------------------------------- 
+04/18/2026 18:13:36 - INFO - runner.train -   lr: 1.0000000000000002e-06
+04/18/2026 18:13:36 - INFO - runner.train -   smooth_loss: 0.02026599003504998
+04/18/2026 18:14:14 - INFO - runner.train -   -----------------------global_step: 9500 -------------------------------- 
+04/18/2026 18:14:14 - INFO - runner.train -   lr: 8.333333333333334e-07
+04/18/2026 18:14:14 - INFO - runner.train -   smooth_loss: 0.05946714711371442
